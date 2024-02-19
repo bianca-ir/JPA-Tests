@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity 
 public class Question {
-      @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -17,7 +17,13 @@ public class Question {
 
     private int correctAnswerIndex;
  
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "QUIZ_KEY")
+    private Quiz quiz;
     
+    public Question(){
+        
+    }
       // Constructor
     public Question(String qText, String[] options, int correctAnswerIndex) {
         this.qText = qText;
@@ -43,7 +49,15 @@ public class Question {
     public void setQText(String qText) {
         this.qText = qText;
     }
+ // Getter for ans
+    public Quiz getQuiz() {
+        return quiz;
+    }
 
+    // Setter for ans
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
  
 
     // Getter for ans
@@ -56,8 +70,8 @@ public class Question {
         this.correctAnswerIndex = correctAnswerIndex;
     }
 }
-
   
     
 
+ 
  
