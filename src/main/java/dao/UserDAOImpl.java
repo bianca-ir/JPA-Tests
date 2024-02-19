@@ -28,13 +28,13 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void insertUser(String username, String password) {
+    public void insertUser(String username, String email) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
 
         User newUser = new User();
         newUser.setUsername(username);
-        newUser.setPassword(password);
+        newUser.setEmail(email);
 
         entityManager.persist(newUser);
 

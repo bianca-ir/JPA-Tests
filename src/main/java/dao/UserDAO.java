@@ -12,7 +12,7 @@ import model.User;
  */
 public interface UserDAO {
     void createUser(User user);
-    void insertUser(String username, String password); 
+    void insertUser(String username, String email); 
   
     
 }

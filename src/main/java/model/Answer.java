@@ -17,16 +17,14 @@ public class Answer {
     private Long id;
      
     private Long questionId; 
-    private String optionA;
-    private String optionB;
-    private int chosenAnswer;
+
+    private int chosenAnswerIndex;
     
        // Constructor with parameters
-    public Answer(Long questionId, String optionA, String optionB, int chosenAnswer) {
+    public Answer(Long questionId, int chosenAnswerIndex) {
         this.questionId = questionId;
-        this.optionA = optionA;
-        this.optionB = optionB;
-        this.chosenAnswer = chosenAnswer;
+   
+        this.chosenAnswerIndex = chosenAnswerIndex;
     }
 
     // Getters and setters
@@ -46,28 +44,14 @@ public class Answer {
         this.questionId = questionId;
     }
 
-    public String getOptionA() {
-        return optionA;
-    }
-
-    public void setOptionA(String optionA) {
-        this.optionA = optionA;
-    }
-
-    public String getOptionB() {
-        return optionB;
-    }
-
-    public void setOptionB(String optionB) {
-        this.optionB = optionB;
-    }
+  
 
     public int getChosenAnswer() {
-        return chosenAnswer;
+        return chosenAnswerIndex;
     }
 
-    public void setChosenAnswer(int chosenAnswer) {
-        this.chosenAnswer = chosenAnswer;
+    public void setChosenAnswer(int chosenAnswerIndex) {
+        this.chosenAnswerIndex = chosenAnswerIndex;
     }
 }
     

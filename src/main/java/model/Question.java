@@ -13,15 +13,16 @@ public class Question {
     private Long id;
 
     private String qText;
+    private String[] options; 
 
-    private int correctAnswer;
+    private int correctAnswerIndex;
  
     
       // Constructor
-    public Question(String qText, int correctAnswer) {
+    public Question(String qText, String[] options, int correctAnswerIndex) {
         this.qText = qText;
-   
-        this.correctAnswer = correctAnswer;
+        this.options = options; 
+        this.correctAnswerIndex = correctAnswerIndex;
       
     }
    
@@ -47,12 +48,12 @@ public class Question {
 
     // Getter for ans
     public int getAns() {
-        return correctAnswer;
+        return correctAnswerIndex;
     }
 
     // Setter for ans
-    public void setAns(int correctAnswer) {
-        this.correctAnswer = correctAnswer;
+    public void setAns(int correctAnswerIndex) {
+        this.correctAnswerIndex = correctAnswerIndex;
     }
 }
 
