@@ -9,11 +9,16 @@ import dao.*;
 
 public class Main {
     public static void main(String[] args) {
-       UserDAO userDAO = new UserDAOImpl();
+    //   UserDAO userDAO = new UserDAOImpl();
+       
+      QuestionDAO questionDAO = new QuestionDAO(); 
+      Question newQuestion = new Question("question1", 1); 
+       
+      questionDAO.insertQuestion(newQuestion);
         
   
        
-        userDAO.insertUser("admin", "pass");
+     //   userDAO.insertUser("admin", "pass");
 
      
     }

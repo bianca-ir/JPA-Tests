@@ -17,6 +17,14 @@ public class QuestionDAO  {
     public QuestionDAO() {
         entityManagerFactory = Persistence.createEntityManagerFactory("onlinetestsPU");
     }
+    
+        public void createQuestion(Question question) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+        entityManager.persist(question);
+        entityManager.getTransaction().commit();
+        entityManager.close();
+    }
 
 
     public void insertQuestion(Question newQuestion) {
