@@ -4,11 +4,13 @@
  */
 package dao;
 
+import java.util.List;
 import model.*; 
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 
 public class QuizDAO  {
@@ -37,5 +39,14 @@ public class QuizDAO  {
 
         entityManager.getTransaction().commit();
         entityManager.close();
+    }
+     public List<Quiz> getAllQuizzes() {
+       EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            Query query = entityManager.createQuery("SELECT q FROM Quiz q");
+            return query.getResultList();
+        } finally {
+            entityManager.close();
+        }
     }
 } 

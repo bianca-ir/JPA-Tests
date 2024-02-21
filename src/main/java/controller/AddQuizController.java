@@ -23,7 +23,7 @@ public class AddQuizController extends HttpServlet {
      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         int numberOfQuestions = Integer.parseInt(request.getParameter("numQuestions"));
-
+        String quizName = request.getParameter("quizName" );
       
         for (int i = 1; i <= numberOfQuestions; i++) {
             String questionText = request.getParameter("question" + i);
@@ -48,7 +48,7 @@ public class AddQuizController extends HttpServlet {
             Quiz quiz = new Quiz();
             quiz.setNumberOfQuestions(numberOfQuestions);
             quiz.setQuestionArray(questionCollection );
-     
+            quiz.setQuizName(quizName);
             quizDAO.insertQuiz(quiz);
 //        
  
@@ -59,4 +59,10 @@ public class AddQuizController extends HttpServlet {
 
     
 }
+       @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.setAttribute("activePage", "AddQuizController");
+        request.getRequestDispatcher("/addQuiz.html").forward(request, response);
+    }
 }

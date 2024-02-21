@@ -12,11 +12,13 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link " href="${pageContext.request.contextPath}/Quizzes">Quizzes </a>
+                
+            <li class="nav-item ${activePage eq 'AddQuizController' ? ' active' : ''}">
+                    <a class="nav-link " href="${pageContext.request.contextPath}/AddQuizController">Add Quiz </a>
                 </li><!-- comment -->
-            
-          
+          <li class="nav-item ${activePage eq 'ViewQuizList' ? ' active' : ''}">
+                    <a class="nav-link " href="${pageContext.request.contextPath}/ViewQuizList">View Quizzes </a>
+          </li>
                 <li class="nav-item active">
                     <a class="nav-link " href="${pageContext.request.contextPath}/Users">Users </a>
                 </li><!-- comment -->
