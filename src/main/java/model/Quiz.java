@@ -23,6 +23,7 @@ public class Quiz {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_quiz;
     private Integer numberOfQuestions;
+    private String quizName;
     
     @OneToMany(mappedBy = "quiz")
     private Collection<Question> questionArray;
@@ -58,5 +59,11 @@ public class Quiz {
         this.questionArray = questionArray;
     }
 
-    
+     public String getQuizName() {
+        return quizName;
+    }
+
+    public void setQuizName(String quizName) {
+        this.quizName = quizName;
+    }
 }
