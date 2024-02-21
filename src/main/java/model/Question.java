@@ -69,6 +69,15 @@ public class Question {
     public void setAns(int correctAnswerIndex) {
         this.correctAnswerIndex = correctAnswerIndex;
     }
+    
+     public String[] getOptions() {
+        return options;
+    }
+
+    // Setter for options
+    public void setOptions(String[] options) {
+        this.options = options;
+    }
 }
   
     
